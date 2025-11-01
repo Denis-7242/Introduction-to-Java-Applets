@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Java Applets – Training Manual</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Slide 1: Title -->
+        <div class="slide active title-slide">
+            <h1>☕ Introduction to Java Applets</h1>
+            <div class="subtitle">Training Manual</div>
+            <div class="author">Prepared by Denis Murithi</div>
+        </div>
+
+        <!-- Slide 2: What is a Java Applet? -->
+        <div class="slide">
+            <div class="slide-number">2 / 12</div>
+            <div class="slide-content">
+                <h2><span class="icon">☕</span> What is a Java Applet?</h2>
+                <p><strong>Definition:</strong> A Java applet is a small application written in Java that runs within a web browser or applet viewer. It's designed to be embedded in HTML pages and executed on the client side.</p>
+                
+                <h3>Brief History</h3>
+                <ul>
+                    <li><strong>1995:</strong> Introduced with Java 1.0 by Sun Microsystems</li>
+                    <li><strong>Mid-1990s to 2000s:</strong> Peak popularity for interactive web content</li>
+                    <li><strong>2017:</strong> Deprecated in Java 9</li>
+                    <li><strong>2018:</strong> Removed from JDK 11 onwards</li>
+                </ul>
+            </div>
+            <div class="slide-footer">Prepared by Denis Murithi</div>
+        </div>
+
+        <!-- Slide 3: Why Use Applets? -->
+        <div class="slide">
+            <div class="slide-number">3 / 12</div>
+            <div class="slide-content">
+                <h2><span class="icon">✓</span> Why Use Applets?</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>Advantages</h3>
+                        <ul>
+                            <li>Platform independence (Write Once, Run Anywhere)</li>
+                            <li>Rich interactive content in browsers</li>
+                            <li>Automatic updates without reinstallation</li>
+                            <li>Access to full Java API</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Common Uses</h3>
+                        <ul>
+                            <li>Educational simulations and visualizations</li>
+                            <li>Interactive games</li>
+                            <li>Data visualization tools</li>
+                            <li>Online calculators and converters</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">Prepared by Denis Murithi</div>
+        </div>
+
+        <!-- Slide 4: Limitations and Decline -->
+        <div class="slide">
+            <div class="slide-number">4 / 12</div>
+            <div class="slide-content">
+                <h2><span class="icon">⚠</span> Limitations and Decline</h2>
+                <ul>
+                    <li><strong>Plugin Dependency:</strong> Required Java Runtime Environment (JRE) plugin installed in browsers</li>
+                    <li><strong>Security Vulnerabilities:</strong> Numerous exploits made applets a security risk</li>
+                    <li><strong>Performance Issues:</strong> Slow startup times and resource-intensive</li>
+                    <li><strong>Browser Support:</strong> Major browsers gradually removed support (Chrome 2015, Firefox 2017, Edge never supported)</li>
+                    <li><strong>Official Deprecation:</strong> Marked deprecated in Java 9 (2017) and removed in Java 11 (2018)</li>
+                    <li><strong>Mobile Incompatibility:</strong> Never worked on mobile devices</li>
+                </ul>
+            </div>
+            <div class="slide-footer">Prepared by Denis Murithi</div>
+        </div>
+
+        <!-- Slide 5: Applet Structure Example -->
+        <div class="slide">
+            <div class="slide-number">5 / 12</div>
+            <div class="slide-content">
+                <h2><span class="icon">&lt;/&gt;</span> Applet Structure Example</h2>
+                <p>A basic Java applet extends the <span class="highlight">java.applet.Applet</span> class:</p>
+                <div class="code-block">
+<pre>import java.applet.Applet;
+import java.awt.Graphics;
+
+public class HelloApplet extends Applet {
+    
+    @Override
+    public void init() {
+        // Initialization code
+        setBackground(Color.white);
+    }
+    
+    @Override
+    public void paint(Graphics g) {
+        // Drawing code
+        g.drawString("Hello, World!", 50, 50);
+    }
+}</pre>
+                </div>
+            </div>
+            <div class="slide-footer">Prepared by Denis Murithi</div>
+        </div>
+
+        <!-- Slide 6: Applet Lifecycle -->
+        <div class="slide">
+            <div class="slide-number">6 / 12</div>
+            <div class="slide-content">
+                <h2><span class="icon">🔄</span> Applet Lifecycle</h2>
+                <p>Applets follow a specific lifecycle with five key methods:</p>
+                <div class="lifecycle-diagram">
+                    <div class="lifecycle-step">init()</div>
+                    <span class="arrow">→</span>
+                    <div class="lifecycle-step">start()</div>
+                    <span class="arrow">→</span>
+                    <div class="lifecycle-step">paint()</div>
+                    <span class="arrow">→</span>
+                    <div class="lifecycle-step">stop()</div>
+                    <span class="arrow">→</span>
+                    <div class="lifecycle-step">destroy()</div>
+                </div>
+                <ul>
+                    <li><strong>init():</strong> Called once when applet is loaded; used for initialization</li>
+                    <li><strong>start():</strong> Called when applet becomes visible; starts or resumes execution</li>
+                    <li><strong>paint():</strong> Called to render graphics on screen</li>
+                    <li><strong>stop():</strong> Called when applet becomes invisible; pauses execution</li>
+                    <li><strong>destroy():</strong> Called once before applet is unloaded; cleanup resources</li>
+                </ul>
+            </div>
+            <div class="slide-footer">Prepared by Denis Murithi</div>
+        </div>
+
+        <!-- Slide 7: Embedding Applets in HTML -->
+        <div class="slide">
+            <div class="slide-number">7 / 12</div>
+            <div class="slide-content">
+                <h2><span class="icon">🌐</span> Embedding Applets in HTML</h2>
+                <p>Applets were embedded using the <span class="highlight">&lt;applet&gt;</span> tag (now obsolete):</p>
+                <div class="code-block">
+<pre>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My Java Applet&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Applet&lt;/h1&gt;
+    
+    &lt;applet code="HelloApplet.class" 
+            width="400" 
+            height="300"&gt;
+        &lt;param name="bgcolor" value="white"&gt;
+        Your browser does not support Java Applets.
+    &lt;/applet&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                </div>
+                <p><strong>Note:</strong> The &lt;applet&gt; tag was deprecated in HTML 4 and removed in HTML5.</p>
+            </div>
+            <div class="slide-footer">Prepared by Denis Murithi</div>
+        </div>
+
+        <!-- Slide 8: Types of Applets -->
+        <div class="slide">
+            <div class="slide-number">8 / 12</div>
+            <div class="slide-content">
+                <h2><span class="icon">📦</span> Types of Applets</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>Local Applets</h3>
+                        <p>Stored on the local file system. Faster to load but less portable.</p>
+                        <pre style="background: white; padding: 10px; border-radius: 5px; font-size: 12px;">code="file:///C:/applets/MyApplet.class"</pre>
+                    </div>
+                    <div class="card">
+                        <h3>Remote Applets</h3>
+                        <p>Downloaded from a web server. More common for web distribution.</p>
+                        <pre style="background: white; padding: 10px; border-radius: 5px; font-size: 12px;">codebase="http://example.com/applets/"</pre>
+                    </div>
+                </div>
+                <div class="card" style="margin-top: 20px;">
+                    <h3>Signed Applets</h3>
+                    <p>Digitally signed with certificates to gain additional permissions beyond the security sandbox. Required user approval before running.</p>
+                </div>
+            </div>
+            <div class="slide-footer">Prepared by Denis Murithi</div>
+        </div>
+
+        <!-- Slide 9: Security & Sandbox -->
+        <div class="slide">
+            <div class="slide-number">9 / 12</div>
+            <div class="slide-content">
+                <h2><span class="icon">🔒</span> Security & Sandbox</h2>
+                <p>Applets ran in a <span class="highlight">restricted security environment</span> called a sandbox:</p>
+                <h3>Restrictions Applied:</h3>
+                <ul>
+                    <li>Cannot read or write files on the local file system</li>
+                    <li>Cannot execute programs on the host machine</li>
+                    <li>Can only make network connections to the originating server</li>
+                    <li>Cannot access system properties except approved ones</li>
+                    <li>Cannot load native libraries or define native methods</li>
+                </ul>
+                <h3>Purpose:</h3>
+                <p>The sandbox protected users from malicious code, but signed applets could request additional permissions through user-approved certificates.</p>
+            </div>
+            <div class="slide-footer">Prepared by Denis Murithi</div>
+        </div>
+
+        <!-- Slide 10: Why Applets Became Obsolete -->
+        <div class="slide">
+            <div class="slide-number">10 / 12</div>
+            <div class="slide-content">
+                <h2><span class="icon">🚀</span> Why Applets Became Obsolete</h2>
+                <h3>Modern Alternatives Emerged:</h3>
+                <ul>
+                    <li><strong>HTML5:</strong> Native canvas element, video/audio support, and rich APIs</li>
+                    <li><strong>JavaScript & Frameworks:</strong> React, Angular, Vue.js for interactive UIs</li>
+                    <li><strong>WebAssembly:</strong> Near-native performance in browsers</li>
+                    <li><strong>Progressive Web Apps (PWAs):</strong> App-like experiences without plugins</li>
+                    <li><strong>CSS3:</strong> Advanced styling and animations without programming</li>
+                </ul>
+                <p style="margin-top: 30px;"><strong>Result:</strong> Modern web technologies offer better performance, security, and mobile support without requiring plugins.</p>
+            </div>
+            <div class="slide-footer">Prepared by Denis Murithi</div>
+        </div>
+
+        <!-- Slide 11: Summary & Takeaways -->
+        <div class="slide">
+            <div class="slide-number">11 / 12</div>
+            <div class="slide-content">
+                <h2><span class="icon">📝</span> Summary & Takeaways</h2>
+                <div class="card">
+                    <h3>Key Points to Remember:</h3>
+                    <ul>
+                        <li>Java applets were pioneering technology for interactive web content in the 1990s-2000s</li>
+                        <li>They required browser plugins and ran in a security sandbox</li>
+                        <li>Security vulnerabilities and lack of mobile support led to their decline</li>
+                        <li>Officially deprecated in 2017 and removed from Java in 2018</li>
+                        <li>Modern web technologies (HTML5, JavaScript, WebAssembly) have completely replaced applets</li>
+                    </ul>
+                </div>
+                <div class="card" style="margin-top: 20px;">
+                    <h3>Historical Significance:</h3>
+                    <p>While obsolete today, applets played a crucial role in demonstrating the potential of rich, interactive web applications and paved the way for modern web development.</p>
+                </div>
+            </div>
+            <div class="slide-footer">Prepared by Denis Murithi</div>
+        </div>
+
+        <!-- Slide 12: Thank You -->
+        <div class="slide thank-you-slide">
+            <h1>Thank You! 🙏</h1>
+            <div class="author" style="font-size: 32px; margin-top: 50px;">
+                Denis Murithi<br>
+                <span style="font-size: 20px; opacity: 0.8; margin-top: 10px; display: block;">Training Manual Series</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="btn" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+        <button class="btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+    </div>
+
+    <script defer src="script.js"></script>
+    
+</body>
+</html>

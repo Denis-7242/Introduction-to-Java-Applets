@@ -236,7 +236,7 @@ SOFTWARE.
 
 If you encounter any issues or have questions:
 
-1. Check the [Issues](https://github.com/yourusername/java-applets-presentation/issues) page
+1. Check the [Issues](https://github.com/Denis-7242/Introduction-to-Java-Applets/issues) page
 2. Open a new issue if needed
 3. Provide details about your browser and operating system
 

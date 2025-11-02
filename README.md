@@ -157,12 +157,6 @@ font-family: 'YourFont', sans-serif;
 3. Update the slide number display
 4. Update `totalSlides` variable is calculated automatically
 
-### Modifying Author Name
-
-Search for "Denis Murithi" and replace with your name in:
-- Title slide
-- All slide footers
-- Thank you slide
 
 ## 🌐 Browser Support
 

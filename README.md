@@ -45,7 +45,7 @@ Open `index.html` in any modern web browser to view the presentation.
 
 1. **Clone or Download** this repository:
 ```bash
-git clone https://github.com/yourusername/java-applets-presentation.git
+git clone https://github.com/Denis-7242/Introduction-to-Java-Applets.git
 ```
 
 2. **Navigate** to the project folder:
